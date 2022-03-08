@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.cf37e3b1ea8a7613d175e36a140e28e0.js"
+  "/precache-manifest.f793d21a951542ed06f512988aec7438.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "app_cargofive"});
