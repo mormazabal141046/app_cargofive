@@ -1,7 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-const axios = require('axios');
+const Axios = require('axios');
+const axios = Axios.create({
+  headers: {
+    "Access-Control-Allow-Origin": "*"
+  }
+});
+
 
 Vue.use(Vuex)
 
@@ -22,7 +28,7 @@ export default new Vuex.Store({
   actions: {
     // Obtiene la data inicial de los puertos
     getPorts({commit}){
-      let url = "http://apitest.cargofive.com/api/ports";
+      let url = "https://apitest.cargofive.com/api/ports";
       axios.get(url).then( response => {
         let data = response.data;
         if(response.status == 200){
@@ -37,7 +43,7 @@ export default new Vuex.Store({
     },
     // Obtiene la data de los puertos por pagina
     getDataByPage({commit}, page){
-      let url = `http://apitest.cargofive.com/api/ports?page=${page}`
+      let url = 'https://apitest.cargofive.com/api/ports?page='+page;
       axios.get(url).then( response => {
         let data = response.data;
         if(response.status == 200){
